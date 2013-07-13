@@ -1,0 +1,29 @@
+{
+  "license": "Apache 2.0",
+  "long_description": "Loggly Cookbook\n====================\nInstalls the loggly-python library and provides a definition for the configuration of Loggly logging.\n\nMore specifically, the `loggly_conf` definition will configure rsyslog to watch a log file and send its lines to a Loggly input.  When first run, `loggly_conf` will create the input and authorize the server to publish events to that input.\n\nDeveloped for and tested on Ubuntu 10.10 LTS\n\nWritten by [EA2D](http://ea2d.com) and maintained here:\n<https://github.com/EA2D/loggly-cookbook>\n\n\nRequirements\n--------------------\n* Loggly account\n* rsyslog configured and running\n\n\n\nAttributes\n--------------------\nRequired:\n\n* `loggly.domain` - Loggly domain (e.g., \"mysite.loggly.com\")\n* `loggly.username` - Loggly username\n* `loggly.password` - Loggly password\n\nOptional:\n\n* `loggly.loggly_python.version` - version of the [loggly-python](https://github.com/EA2D/loggly-python) library to install (default is 0.1.2)\n\nJSON example:\n\n    \"loggly\": {\n      \"username\": \"saucier\",\n      \"password\": \"h0llandaise\",\n      \"domain\": \"mysite\"\n    }\n\n\nUsage\n--------------------\nExample:\n\n    loggly_conf \"nginx-error\" do\n        device_ip node[:ip_address]\n        input_file \"/var/log/nginx/error.log\"\n        input_file_tag \"nginx-error\"\n        input_file_state_file \"stat-nginx-error\"\n    end\n\n\nContributing\n--------------------\nWant to contribute?  Great!  Here's how:\n\n* Fork the GitHub repository (<https://github.com/EA2D/loggly-cookbook>)\n* Apply your changes - bonus points for using a topic branch!\n* Send a pull request (see <http://help.github.com/pull-requests/>)\n\nWe'll review, merge, and publish the changes!  If you have any questions, email <ops@ea2d.com>.\n\n\nLicense\n--------------------\n\n    Copyright 2011 Electronic Arts Inc.\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n        http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n",
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "providing": {
+  },
+  "maintainer": "Mike Babineau",
+  "description": "Installs/Configures the loggly-python library",
+  "replacing": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.2",
+  "maintainer_email": "michael.babineau@gmail.com",
+  "groupings": {
+  },
+  "recommendations": {
+  },
+  "name": "loggly",
+  "recipes": {
+  },
+  "attributes": {
+  },
+  "suggestions": {
+  }
+}
