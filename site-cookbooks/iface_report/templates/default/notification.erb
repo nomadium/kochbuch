@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+import tweepy
+import sys
+
+CONSUMER_KEY = '<%= @consumer_key %>'
+CONSUMER_SECRET = '<%= @consumer_secret %>'
+ACCESS_TOKEN = '<%= @access_token %>'
+ACCESS_TOKEN_SECRET = '<%= @access_token_secret %>'
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+
+api = tweepy.API(auth, api_root='/1.1')
+
+direct_message = api.send_direct_message(sys.argv[1], text=sys.argv[2])

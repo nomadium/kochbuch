@@ -1,0 +1,15 @@
+[DEFAULT]
+mail_to = <%= node['mini-dinstall']['contact'] %>
+incoming_permissions = 0750
+architectures = all, i386, amd64
+archive_style = flat
+dynamic_reindex = 1
+archivedir = <%= node['mini-dinstall']['archivedir'] %>
+generate_release = 1
+release_origin = <%= node['mini-dinstall']['release_origin'] %>
+release_label = <%= node['mini-dinstall']['release_label'] %>
+release_description = <%= node['mini-dinstall']['release_description'] %>
+release_signscript = ~/bin/sign-release.sh
+
+[openenglish-precise]
+release_suite = openenglish-precise

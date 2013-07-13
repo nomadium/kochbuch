@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# This scripts just send a DM with networking information
+# whenever primary interface is bring up
+
+set -e
+
+TO="<%= node['iface_report']['contact'] %>"
+
+MESSAGE=$(cat <<EOM
+$(hostname)
+$(date '+%F %R:%S')
+$(ip addr show $IFACE | grep inet)
+EOM
+)
+
+# If for some reason the notification step fails,
+# I don't want to have a down interface
+/etc/network/scripts/notification $TO "$MESSAGE" || true

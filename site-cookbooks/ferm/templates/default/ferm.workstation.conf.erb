@@ -1,0 +1,55 @@
+# -*- shell-script -*-
+#
+#  Configuration file for ferm(1).
+#
+
+table filter {
+    chain INPUT {
+        policy DROP;
+
+        # connection tracking
+        mod state state INVALID DROP;
+        mod state state (ESTABLISHED RELATED) ACCEPT;
+
+        # allow local packet
+        interface lo ACCEPT;
+
+        # respond to ping
+        proto icmp ACCEPT; 
+
+        # allow SSH connections
+        proto tcp dport ssh ACCEPT;
+
+        @def $LAPTOP_ADDR = <%= @laptop_address %>;
+
+        # allow all traffic from my laptop
+        #saddr $LAPTOP_ADDR mod limit limit 3/min limit-burst 10 LOG log-prefix "from laptop: " log-level debug;
+        saddr $LAPTOP_ADDR ACCEPT;
+
+        # ignore all traffic not coming from my laptop but log it first
+        #saddr !$LAPTOP_ADDR mod limit limit 3/min limit-burst 10 LOG log-prefix "rejected incoming: " log-level debug;
+
+        # the rest is dropped by the above policy
+    }
+
+    # outgoing connections are not limited
+    chain OUTPUT policy ACCEPT;
+
+    # this is not a router
+    chain FORWARD policy DROP;
+}
+
+# IPv6:
+domain ip6 {
+    table filter {
+        chain INPUT {
+            policy DROP;
+        }
+        chain FORWARD {
+            policy DROP;
+        }
+        chain INPUT {
+            policy DROP;
+        }
+    }
+}

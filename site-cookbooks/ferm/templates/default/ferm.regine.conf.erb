@@ -1,0 +1,52 @@
+# -*- shell-script -*-
+#
+#  Configuration file for ferm(1).
+#
+
+table filter {
+    chain INPUT {
+        policy DROP;
+
+        # connection tracking
+        mod state state INVALID DROP;
+        mod state state (ESTABLISHED RELATED) ACCEPT;
+
+        # allow local packet
+        interface lo ACCEPT;
+
+        # respond to ping
+        proto icmp ACCEPT; 
+
+        # allow SSH connections
+        proto tcp dport ssh ACCEPT;
+
+        # allow ident connections just for vanity in IRC
+        proto tcp dport auth ACCEPT;
+
+        # allow connections to my jabber server in home
+        proto tcp dport xmpp-client ACCEPT;
+
+        # the rest is dropped by the above policy
+    }
+
+    # outgoing connections are not limited
+    chain OUTPUT policy ACCEPT;
+
+    # this is not a router
+    chain FORWARD policy DROP;
+}
+
+# IPv6:
+domain ip6 {
+    table filter {
+        chain INPUT {
+            policy DROP;
+        }
+        chain FORWARD {
+            policy DROP;
+        }
+        chain INPUT {
+            policy DROP;
+        }
+    }
+}
