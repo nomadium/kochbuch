@@ -1,0 +1,11 @@
+{
+  "name": "data_bag_item_passwords_machines",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "passwords",
+  "raw_data": {
+    "id": "machines",
+    "alice_grub_bootpasswd": "ap3bASF25T8xZ9apFIUs5hnRLYteXxAXaqusiS0NwnfPsfXwgSXmWCs6KZHz\nhyf4Tsf1q8Nki5XOXKua9RNCXOSUm/0CU4s458UbzZcxcLgcdLPzPdMuTl69\nHw6ZC372AwJJMAMzAWwUgKRSrMpTdukraOo2aN6+/uPkxswOJLlSEMwvwbQN\nBYMjYmt9srY6yQG6ym7iskEGbzO2AcPwAuljSwvGbX/6ScBQzvPRgPXe+OB5\n/uhG9qS7A/fwRC9ctuYmb9rOC+X/v7EfbSt//g/Lx/iCLwvaoJyNQGjCFM4s\nGwwpy8L2C9MFux84GcNBtnWrLzeWXt44Ha/VT2TeLJYDbgh9bNgfzWAYgkSy\nSso1mAdQANkCyocJwxsSkWIirCF3VbmCyzU49R1eNKJeKw==\n",
+    "alice_grub_bootpasswd_cleartext": "bt/XoWaD8u48dcBfo3Cr1bzTx1+kRLCxrMUDEEN4yoI=\n"
+  }
+}

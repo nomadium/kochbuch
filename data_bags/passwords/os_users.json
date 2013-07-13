@@ -1,0 +1,11 @@
+{
+  "name": "data_bag_item_passwords_os_users",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "passwords",
+  "raw_data": {
+    "id": "os_users",
+    "root@regine": "upXsjRZafER+sb4kcWM56ZVWbhqrKHwk+MTi7WoNuVH34BRNosrhp2VDI6lI\ndrs7YkvDuupxuaRwThJ6mUesr3xDu4namlPQpbKq3xjBlB7JSFoNNpwBtlDW\n7CPTfCHzexPp4OMY3r3xac21u2rSww==\n",
+    "miguel@regine": "B60EL0rR+trCFvAH2wnmvlpUn08NjUGkn+NINicHus+NoFp/zRD9DO1lFXIU\nbFjHO5xropCsdSurlQDCsVxF8qhzlG21aXP4UzC/LtxV79q3h63rdMcd5Gsr\nvMaoYAh0RhB9hPpxbfKTDWopbN5tsQ==\n"
+  }
+}

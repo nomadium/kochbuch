@@ -1,0 +1,11 @@
+{
+  "name": "data_bag_item_network_settings_addresses",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "network_settings",
+  "raw_data": {
+    "id": "addresses",
+    "lykke": "5Z9T/LYgVnquiHrcC6R/2UmR4ACiXdlFOmuhGdo7ELs=\n",
+    "alice": "yShDSBLW/VC4Kxn5eVL++YvqE9baA3CGvX1HCz3/+bs=\n"
+  }
+}

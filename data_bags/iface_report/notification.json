@@ -1,0 +1,13 @@
+{
+  "name": "data_bag_item_iface_report_notification",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "iface_report",
+  "raw_data": {
+    "id": "notification",
+    "CONSUMER_KEY": "4gqKuS8PVo9+dJj8FMfYgs1oBENzQkAhj/dU1YmzuBE=\n",
+    "CONSUMER_SECRET": "nqCfhNuQZpx5tXgDu7mcfI4F938EOW6oeC+oHXU4ut+F6cGC3uQc0uEKPgYt\nyiHCZdNjriMLn/oEKkO0OiS+pw==\n",
+    "ACCESS_TOKEN": "PJfQOafkQ580Mr+HM8Y2qMmpeRPey7nlzx8OljLu3oCbMT37SQnd/vsO4SKn\ndeYZcLP3HWLh0W0beD/J317Xyg==\n",
+    "ACCESS_TOKEN_SECRET": "QZK76UdecoOa/Tw5T+2EJiE71/4XJUQKJqSGgEYxoB2MvLsrlwrVlnuKReFu\nES1abMrlQMOhBWCD40X2U9jY5w==\n"
+  }
+}

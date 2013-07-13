@@ -1,0 +1,14 @@
+{
+  "name": "data_bag_item_network_settings_prgmr",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "network_settings",
+  "raw_data": {
+    "id": "prgmr",
+    "regine_iface": "xLfFCJyqEIwgH+TnJgU1rA==\n",
+    "regine_method": "DcRe/xj7A1ZG3a1liWgQDw==\n",
+    "regine_address": "azIFxjAqZ8fakskZ0S3iO/bt/j8w5+o644NU8bDCazU=\n",
+    "netmask": "kves+n3DQzudGHBaoH0U0LXeWdnp9uStmSYGVs7/w2c=\n",
+    "gateway": "PARMMnSqrof5sOkichuVdNodE2L0ysPS9Un3f4xCjxU=\n"
+  }
+}
