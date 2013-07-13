@@ -1,0 +1,29 @@
+{
+  "name": "embedded_workstation",
+  "description": "Role for the embedded workstation deployed at my home",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[sudo]",
+    "recipe[chef]",
+    "recipe[easygit]",
+    "recipe[vim]",
+    "recipe[dropbear]",
+    "recipe[virt-manager]",
+    "recipe[nfs-kernel-server]",
+    "recipe[screen]",
+    "recipe[iface_report]",
+    "recipe[ferm]",
+    "recipe[curl]",
+    "recipe[cryptostick]",
+    "recipe[grub2::security]",
+    "recipe[autossh]",
+    "recipe[python-mutagen]"
+  ],
+  "env_run_lists": {
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "regine",
+  "description": "My VPS regine.miguel.cc deployed at prgmr.com",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[sudo]",
+    "recipe[chef]",
+    "recipe[prgmr::regine]",
+    "recipe[irssi]",
+    "recipe[autossh]",
+    "recipe[pbuilder]",
+    "recipe[screen]",
+    "recipe[nullidentd]",
+    "recipe[tunnel]",
+    "recipe[ferm::regine]",
+    "recipe[ndisc6]",
+    "recipe[telnet]",
+    "recipe[rtorrent]"
+  ],
+  "env_run_lists": {
+  }
+}
