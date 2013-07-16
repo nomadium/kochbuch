@@ -22,7 +22,8 @@
     "recipe[cryptostick]",
     "recipe[grub2::security]",
     "recipe[autossh]",
-    "recipe[python-mutagen]"
+    "recipe[python-mutagen]",
+    "recipe[msmtp]"
   ],
   "env_run_lists": {
   }
