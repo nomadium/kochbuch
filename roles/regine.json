@@ -20,7 +20,8 @@
     "recipe[ferm::regine]",
     "recipe[ndisc6]",
     "recipe[telnet]",
-    "recipe[rtorrent]"
+    "recipe[rtorrent]",
+    "recipe[openvpn]"
   ],
   "env_run_lists": {
   }
