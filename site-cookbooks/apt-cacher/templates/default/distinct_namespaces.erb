@@ -1,0 +1,11 @@
+# From version 1.7.0 there is support for caching multiple distibutions (eg
+# Debian and Ubuntu) within the same apt-cacher instance. Enable this by setting
+# distinct_namespaces to 1. Distribution package files are cached in separate
+# directories whose names are derived from the relevant path_map key. So
+# generally there will be a path_map key => server(s) setting for each
+# distribution that is cached. Having enabled distinct_namespaces, existing
+# packages can be imported into the correct directory by running (as root)
+#
+#  /usr/share/apt-cacher/apt-cacher-import.pl -u {cache_dir}/packages
+#
+distinct_namespaces = 1
