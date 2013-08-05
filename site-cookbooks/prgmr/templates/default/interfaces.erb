@@ -11,3 +11,8 @@ iface <%= @interface %> inet <%= @method %>
      address <%= @address %>
      netmask <%= @netmask %>
      gateway <%= @gateway %>
+
+iface <%= @interface %> inet6 <%= @method %>
+     address <%= @ipv6_address %>
+     netmask <%= @ipv6_netmask %>
+     gateway <%= @ipv6_gateway %>

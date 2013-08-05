@@ -5,10 +5,53 @@
   "data_bag": "network_settings",
   "raw_data": {
     "id": "prgmr",
-    "regine_iface": "xLfFCJyqEIwgH+TnJgU1rA==\n",
-    "regine_method": "DcRe/xj7A1ZG3a1liWgQDw==\n",
-    "regine_address": "azIFxjAqZ8fakskZ0S3iO/bt/j8w5+o644NU8bDCazU=\n",
-    "netmask": "kves+n3DQzudGHBaoH0U0LXeWdnp9uStmSYGVs7/w2c=\n",
-    "gateway": "PARMMnSqrof5sOkichuVdNodE2L0ysPS9Un3f4xCjxU=\n"
+    "regine_iface": {
+      "encrypted_data": "IQawc4VBUXNnn3Xg/z9/zLF1mJsrZdq24DVTQABrHPE=\n",
+      "iv": "lDgjYjgfqd8De2nWVufjLQ==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "regine_method": {
+      "encrypted_data": "Nu46313tBtFrWqROU79X0ZQzLQUzUb2BD9GrKF0T0IA=\n",
+      "iv": "VIJF7/XbYduy1pEIuTa3cA==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "regine_address": {
+      "encrypted_data": "E3heO+kQjVm7W0upNWoNY1yyvTX4gccyahUrEWctGA4=\n",
+      "iv": "GsHoD+G2tM3KbrI35LmCfw==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "netmask": {
+      "encrypted_data": "RXEIDv7GtyedC+IKImnW6aQEdze3jRaowwe1WEr0h4QE+Pgs0zBEZqIksZEr\n/spX\n",
+      "iv": "XVg4oZiGWcb1ZGLfdaMahA==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "gateway": {
+      "encrypted_data": "BmfTr6skgjatBuswqwZG541RhTkGXN2BzdJiTaBy870=\n",
+      "iv": "rVpkrApPOoBNfqBCCwqwxQ==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "regine_ipv6_address": {
+      "encrypted_data": "xE1k3hCsXlgeDWKBZ07i6PvRT/zB6I/gzJjh3S17yJ7dt80DdmdlUOl3SIg7\nRWqL\n",
+      "iv": "U3GsxV1Rt1H9T4RO3Qpk9g==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "ipv6_netmask": {
+      "encrypted_data": "koBTtMwKvTydZQz70cdWXbOSN23kugfV5Kc8PkkDJDo=\n",
+      "iv": "EsXhDcefWDndvF9Jv0qQnQ==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    },
+    "ipv6_gateway": {
+      "encrypted_data": "Gx98e41U4w6RTVyWjwbSlTuY7gOSzWZxZWQ2lqdISPKMZsJ/WisxrbJ43NpJ\n6GhW\n",
+      "iv": "nlW8CGyC+iaIr+Y3XP3+GA==\n",
+      "version": 1,
+      "cipher": "aes-256-cbc"
+    }
   }
 }
