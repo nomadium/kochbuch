@@ -26,6 +26,9 @@ table filter {
         # allow connections to my jabber server in home
         proto tcp dport xmpp-client ACCEPT;
 
+        # allow connections to my web server
+        proto tcp dport http ACCEPT;
+
         # the rest is dropped by the above policy
     }
 
@@ -56,6 +59,9 @@ domain ip6 table filter {
                      
         # allow ident connections just for vanity in IRC
         proto tcp dport auth ACCEPT;
+
+        # allow connections to my web server
+        proto tcp dport http ACCEPT;
 
         # the rest is dropped by the above policy
     }
