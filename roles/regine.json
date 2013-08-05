@@ -22,7 +22,8 @@
     "recipe[telnet]",
     "recipe[rtorrent]",
     "recipe[openvpn]",
-    "recipe[zip]"
+    "recipe[zip]",
+    "recipe[nginx]"
   ],
   "env_run_lists": {
   }
