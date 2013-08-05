@@ -21,7 +21,8 @@
     "recipe[ndisc6]",
     "recipe[telnet]",
     "recipe[rtorrent]",
-    "recipe[openvpn]"
+    "recipe[openvpn]",
+    "recipe[zip]"
   ],
   "env_run_lists": {
   }
