@@ -17,6 +17,7 @@
 # http://wiki.debian.org/HowToSetupADebianRepository
 # http://upsilon.cc/~zack/blog/posts/2009/04/howto:_uploading_to_people.d.o_using_dput/
 # http://apt.last.fm/
+require 'open3'
 
 %w(mini-dinstall nginx rng-tools).each do |pkg|
   package pkg do
@@ -118,6 +119,7 @@ execute "generate pgp key for apt repository" do
   group node['mini-dinstall']['group']
   environment ({'HOME' => node['mini-dinstall']['homedir'], 'USER' => node['mini-dinstall']['user']})
   command "gpg --batch --gen-key #{batch_key_conf_file} && touch pgp_key_is_generated"
+  notifies :create, "ruby_block[fetch-pgp-key-id]", :immediately
 end
 
 file batch_key_conf_file do
@@ -132,8 +134,16 @@ file "#{node['mini-dinstall']['homedir']}/.gnupg/passphrase" do
   content "#{gnupg_passphrase}"
 end
 
-# todo: this variable is going to be empty, I need to read about chef run context or another way to update the variable at run time
-gnupg_keyid = `sudo su -s /bin/bash -c 'gpg --list-secret-keys --with-colons | grep ^sec::' - #{node['mini-dinstall']['user']}`.split(':')[4]
+ruby_block "fetch-pgp-key-id" do
+  block do
+    list_cmd = "sudo su -s /bin/bash -c 'gpg --list-secret-keys --with-colons | grep ^sec::' - #{node['mini-dinstall']['user']}"
+    stdin, stdout, stderr = Open3.popen3(list_cmd)
+    gnupg_keyid = stdout.gets(nil).split(':')[4]
+    gnupg_pubkey = "#{node['mini-dinstall']['archivedir']}/#{gnupg_keyid}.pub"
+    `sudo su -s /bin/bash -c 'gpg --armor --export #{gnupg_keyid}' - #{node['mini-dinstall']['user']} > #{gnupg_pubkey}`
+  end
+  action :nothing
+end
 
 directory "#{node['mini-dinstall']['homedir']}/bin" do
   action :create
@@ -147,20 +157,8 @@ template "#{node['mini-dinstall']['homedir']}/bin/sign-release.sh" do
   owner node['mini-dinstall']['user']
   group node['mini-dinstall']['group']
   mode 0700
-  variables(:gnupg_keyid => gnupg_keyid)
+  variables(:gnupg_keyid => node[:gnupg_keyid])
   source "sign-release.sh.erb"
-end
-
-gnupg_pubkey = "#{node['mini-dinstall']['archivedir']}/#{gnupg_keyid}.pub"
-
-execute "export apt pgp public key" do
-  action :run
-  creates gnupg_pubkey
-  cwd node['mini-dinstall']['homedir']
-  user node['mini-dinstall']['user']
-  group node['mini-dinstall']['group']
-  environment ({'HOME' => node['mini-dinstall']['homedir'], 'USER' => node['mini-dinstall']['user']})
-  command "gpg --armor --export #{gnupg_keyid} > #{gnupg_pubkey}"
 end
 
 service "nginx" do
